@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomNavigationViewStyle" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="labelVisibilityMode">unlabeled</item>
+        <item name="materialThemeOverlay">@style/BottomNavigationViewThemeOverlay</item>
+    </style>
+
+    <style name="BottomNavigationViewThemeOverlay">
+        <item name="colorOnSurface">@color/white</item>
+    </style>
+</resources>
