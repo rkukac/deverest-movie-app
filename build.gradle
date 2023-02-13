@@ -22,4 +22,5 @@ ext {
     glide_version = '4.14.2'
     timber_version = '5.0.1'
     coroutines_version = '1.6.4'
+    navigation_version = '2.5.3'
 }
