@@ -18,6 +18,7 @@ ext {
     lifecycle_viewmodel_version = '2.5.1'
     retrofit_version = '2.9.0'
     okhttp_version = '4.10.0'
+    moshi_version = '1.14.0'
     rainbow_cake_version = '1.6.0'
     glide_version = '4.14.2'
     timber_version = '5.0.1'

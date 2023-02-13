@@ -4,7 +4,7 @@ import co.zsmb.rainbowcake.base.RainbowCakeFragment
 import co.zsmb.rainbowcake.hilt.getViewModelFromFactory
 import com.rkukac.movieapp.R
 import com.rkukac.movieapp.databinding.FragmentPopularBinding
-import com.rkukac.movieapp.util.viewBinding
+import com.rkukac.movieapp.util.ui.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

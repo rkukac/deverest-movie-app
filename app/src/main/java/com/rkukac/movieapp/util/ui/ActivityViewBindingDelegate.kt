@@ -1,4 +1,4 @@
-package com.rkukac.movieapp.util
+package com.rkukac.movieapp.util.ui
 
 import android.view.LayoutInflater
 import androidx.fragment.app.FragmentActivity
