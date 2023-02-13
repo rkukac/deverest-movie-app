@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="config_network_base_url" translatable="false">https://api.themoviedb.org/3/</string>
+    <integer name="config_network_timeout_ms">30000</integer>
+</resources>
