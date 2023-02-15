@@ -15,12 +15,38 @@
         android:id="@+id/search_fragment"
         android:name="com.rkukac.movieapp.ui.navbar.search.SearchFragment"
         android:label="@string/screen_title_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_search_fragment_to_details_fragment"
+            app:destination="@id/details_fragment"
+            app:enterAnim="@anim/fade_in"
+            app:popEnterAnim="@anim/fade_in">
+
+            <argument
+                android:name="id"
+                app:argType="integer" />
+
+        </action>
+
+    </fragment>
 
     <fragment
         android:id="@+id/favourites_fragment"
         android:name="com.rkukac.movieapp.ui.navbar.favourites.FavouritesFragment"
         android:label="@string/screen_title_favourites"
         tools:layout="@layout/fragment_favourites" />
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="com.rkukac.movieapp.ui.details.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details">
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+    </fragment>
 
 </navigation>

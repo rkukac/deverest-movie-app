@@ -15,4 +15,5 @@
     <string name="search_content_button_text">Search</string>
     <string name="search_empty_title">No results found for your keyword!</string>
     <string name="search_empty_description">Please try searching with another keyword.</string>
+    <string name="search_empty_keyword_message">Enter a keyword to search.</string>
 </resources>
