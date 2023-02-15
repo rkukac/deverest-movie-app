@@ -1,6 +1,7 @@
 package com.rkukac.movieapp
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.viewbinding.BuildConfig
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
@@ -13,7 +14,12 @@ class MovieAppApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        disableForcedNightMode()
         initTimber()
+    }
+
+    private fun disableForcedNightMode() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
     }
 
     private fun initTimber() {
