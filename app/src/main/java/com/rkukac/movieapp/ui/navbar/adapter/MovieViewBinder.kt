@@ -12,7 +12,7 @@ class MovieViewBinder @Inject constructor() {
         itemClickListener: MovieAdapterItemClickListener?
     ) = with(holder.itemBinding) {
         root.setOnClickListener { itemClickListener?.onItemClick(movie = movie) }
-        movie.image?.let { imageListMovie.loadImageUrl(it) }
+        imageListMovie.loadImageUrl(movie.image)
         textListTitle.text = movie.title
         textListSubtitle.text = movie.budgetString
     }

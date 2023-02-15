@@ -16,4 +16,11 @@
     <string name="search_empty_title">No results found for your keyword!</string>
     <string name="search_empty_description">Please try searching with another keyword.</string>
     <string name="search_empty_keyword_message">Enter a keyword to search.</string>
+
+    <string name="details_label_release_date">Release date</string>
+    <string name="details_label_rating">Rating</string>
+    <string name="details_label_popularity">Popularity</string>
+    <string name="details_label_budget">Budget</string>
+    <string name="details_label_revenue">Revenue</string>
+    <string name="details_label_overview">Overview</string>
 </resources>

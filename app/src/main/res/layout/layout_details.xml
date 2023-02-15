@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_title"
+            style="@style/TextStyle.Details.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_line_vertical_30"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_details"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/space_side"
+            app:layout_constraintDimensionRatio="2:3"
+            app:layout_constraintEnd_toStartOf="@id/guide_line_vertical_30"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_details_title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_label_release_date"
+            style="@style/TextStyle.Details.LabelText.Label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingTop="0dp"
+            android:text="@string/details_label_release_date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toTopOf="@id/image_details" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_value_release_date"
+            style="@style/TextStyle.Details.LabelText.Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_label_release_date"
+            tools:text="Value" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_label_rating"
+            style="@style/TextStyle.Details.LabelText.Label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/details_label_rating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_value_release_date" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_value_rating"
+            style="@style/TextStyle.Details.LabelText.Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_label_rating"
+            tools:text="Value" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_label_popularity"
+            style="@style/TextStyle.Details.LabelText.Label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/details_label_popularity"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_value_rating" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_value_popularity"
+            style="@style/TextStyle.Details.LabelText.Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_label_popularity"
+            tools:text="Value" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_label_budget"
+            style="@style/TextStyle.Details.LabelText.Label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/details_label_budget"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_value_popularity" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_value_budget"
+            style="@style/TextStyle.Details.LabelText.Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_label_budget"
+            tools:text="Value" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_label_revenue"
+            style="@style/TextStyle.Details.LabelText.Label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/details_label_revenue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_value_budget" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_value_revenue"
+            style="@style/TextStyle.Details.LabelText.Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_label_revenue"
+            tools:text="Value" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_label_overview"
+            style="@style/TextStyle.Details.LabelText.Label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/details_label_overview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_value_revenue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_details_value_overview"
+            style="@style/TextStyle.Details.LabelText.Value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guide_line_vertical_30"
+            app:layout_constraintTop_toBottomOf="@id/text_details_label_overview"
+            tools:text="Value" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
