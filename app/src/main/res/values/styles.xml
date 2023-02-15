@@ -65,6 +65,39 @@
         <item name="android:paddingBottom">@dimen/list_item_padding</item>
     </style>
 
+    <style name="TextStyle.Details">
+        <item name="android:paddingStart">@dimen/space_side</item>
+        <item name="android:paddingEnd">@dimen/space_side</item>
+    </style>
+
+    <style name="TextStyle.Details.Title">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:background">@color/movie_grey</item>
+        <item name="android:paddingTop">@dimen/space_side</item>
+        <item name="android:paddingBottom">@dimen/space_side</item>
+    </style>
+
+    <style name="TextStyle.Details.Subtitle">
+        <item name="android:textSize">@dimen/text_size_description</item>
+        <item name="android:background">@color/movie_grey</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">@dimen/space_side</item>
+    </style>
+
+    <style name="TextStyle.Details.LabelText">
+        <item name="android:textSize">@dimen/text_size_details_label</item>
+        <item name="android:paddingStart">@dimen/details_label_space</item>
+        <item name="android:paddingEnd">@dimen/space_side</item>
+    </style>
+
+    <style name="TextStyle.Details.LabelText.Label">
+        <item name="android:paddingTop">@dimen/details_label_space</item>
+    </style>
+
+    <style name="TextStyle.Details.LabelText.Value">
+        <item name="android:textColor">@color/movie_blue_secondary</item>
+    </style>
+
     <style name="ButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:layout_marginStart">@dimen/space_side</item>
         <item name="android:layout_marginEnd">@dimen/space_side</item>

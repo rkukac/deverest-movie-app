@@ -6,6 +6,7 @@ import com.rkukac.movieapp.R
 import com.rkukac.movieapp.domain.model.DomainStateModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import timber.log.Timber
+import java.math.BigDecimal
 import java.text.DecimalFormat
 import javax.inject.Inject
 
@@ -13,23 +14,23 @@ class MovieHelper @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
 
-    private val budgetFormat = DecimalFormat(context.getString(R.string.config_budget_format))
+    private val amountFormat = DecimalFormat(context.getString(R.string.config_amount_format))
 
-    private val budgetPrefix = context.getString(R.string.config_budget_prefix)
+    private val amountPrefix = context.getString(R.string.config_amount_prefix)
 
     fun getFormattedImage(image: String?): String? {
         return image?.let { context.getString(R.string.config_image_base_url).plus(it) }
     }
 
-    fun getFormattedBudget(budget: Int): String {
-        if (budget == 0) {
+    fun getFormattedAmount(amount: BigDecimal?): String {
+        if (amount == null || amount == BigDecimal.ZERO) {
             return ""
         }
 
         return try {
-            budgetPrefix.plus(budgetFormat.format(budget))
+            amountPrefix.plus(amountFormat.format(amount))
         } catch (e: Exception) {
-            Timber.d(e, "Failed budget format!")
+            Timber.d(e, "Failed to format amount!")
             ""
         }
     }
@@ -45,6 +46,10 @@ class MovieHelper @Inject constructor(
 
     fun getEmptySearchKeywordMessage(): String =
         getStringResource(R.string.search_empty_keyword_message)
+    //endregion
+
+    //region Details
+    fun getDetailsErrorStateModel(): DomainStateModel = getDefaultErrorStateModel()
     //endregion
 
     private fun getDefaultErrorStateModel(

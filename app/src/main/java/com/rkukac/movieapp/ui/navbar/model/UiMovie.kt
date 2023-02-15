@@ -7,7 +7,6 @@ data class UiMovie(
     val title: String,
     val image: String?,
     val rating: Double,
-    val budget: Int,
     val budgetString: String
 )
 
@@ -16,6 +15,5 @@ fun DomainMovie.toUiMovie() = UiMovie(
     title = title,
     image = image,
     rating = rating,
-    budget = budget,
     budgetString = budgetString
 )

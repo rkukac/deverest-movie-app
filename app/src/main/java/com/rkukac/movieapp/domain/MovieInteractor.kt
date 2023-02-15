@@ -7,6 +7,7 @@ import com.rkukac.movieapp.util.MovieHelper
 import com.rkukac.movieapp.util.paging.PagingHelper
 import com.rkukac.movieapp.util.paging.PagingHelperListener
 import com.rkukac.movieapp.util.paging.common.PagingSourceListener
+import java.math.BigDecimal
 import javax.inject.Inject
 
 class MovieInteractor @Inject constructor(
@@ -21,8 +22,8 @@ class MovieInteractor @Inject constructor(
         movieHelper.getFormattedImage(image = image)
     }
 
-    private val budgetFormatterBlock: (Int) -> String = { budget ->
-        movieHelper.getFormattedBudget(budget = budget)
+    private val amountFormatterBlock: (BigDecimal?) -> String = { amount ->
+        movieHelper.getFormattedAmount(amount = amount)
     }
 
     //region Search
@@ -44,7 +45,7 @@ class MovieInteractor @Inject constructor(
         return movies.map {
             getMovieDetails(it.id).toDomainMovie(
                 imageFormatterBlock = imageFormatterBlock,
-                budgetFormatterBlock = budgetFormatterBlock
+                amountFormatterBlock = amountFormatterBlock
             )
         }
     }
@@ -61,12 +62,16 @@ class MovieInteractor @Inject constructor(
     )
     //endregion
 
+    //region Details
+    fun getDetailsErrorStateModel(): DomainStateModel = movieHelper.getDetailsErrorStateModel()
+
     suspend fun getMovieDetails(movieId: Int): DomainMovieDetails {
         return networkDataSource.getMovieDetails(
             apiKey = apiKey,
             movieId = movieId
         ).getContentOrThrow()
     }
+    //endregion
 
     //region PagingHelperListener
     override suspend fun pagingSearchMovies(

@@ -70,9 +70,9 @@ abstract class MovieListFragment<VS : Any, PSD : MovieListPagingSourceData, PK :
     }
 
     @CallSuper
-    override fun onDestroyView() {
+    override fun onStop() {
         releaseAdapters()
-        super.onDestroyView()
+        super.onStop()
     }
 
     private fun setupRecyclerView() {

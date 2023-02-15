@@ -9,7 +9,7 @@ import android.widget.ViewAnimator
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 
-fun ImageView.loadImageUrl(iconUrl: String) {
+fun ImageView.loadImageUrl(iconUrl: String?) {
     Glide.with(context)
         .load(iconUrl)
         .into(this)
