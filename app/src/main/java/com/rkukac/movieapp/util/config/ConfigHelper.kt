@@ -15,7 +15,7 @@ class ConfigHelper @Inject constructor(
         get() = getIntegerResource(R.integer.config_page_size)
 
 
-    fun provideSearchPageConfig(): PagingConfig = PagingConfig(
+    fun provideDefaultPageConfig(): PagingConfig = PagingConfig(
         pageSize = defaultPageSize,
         enablePlaceholders = false,
         initialLoadSize = defaultPageSize

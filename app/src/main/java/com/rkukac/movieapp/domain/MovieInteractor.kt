@@ -80,6 +80,13 @@ class MovieInteractor @Inject constructor(
             page = page
         ).getContentOrThrow()
     }
+
+    fun providePopularPagingSource(
+        pagingSourceListener: PagingSourceListener
+    ) = pagingHelper.providePopularPagingSource(
+        pagingSourceListener = pagingSourceListener,
+        pagingHelperListener = this
+    )
     //endregion
 
     //region PagingHelperListener
@@ -87,5 +94,10 @@ class MovieInteractor @Inject constructor(
         searchKeyword: String,
         page: Int
     ): DomainSearchMoviesResponse = searchMovies(searchKeyword = searchKeyword, page = page)
+
+    override suspend fun pagingGetPopularMovies(
+        page: Int
+    ): DomainGetPopularMoviesResponse = getPopularMovies(page = page)
+
     //endregion
 }
