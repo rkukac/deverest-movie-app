@@ -73,6 +73,15 @@ class MovieInteractor @Inject constructor(
     }
     //endregion
 
+    //region Popular
+    private suspend fun getPopularMovies(page: Int): DomainGetPopularMoviesResponse {
+        return networkDataSource.getPopularMovies(
+            apiKey = apiKey,
+            page = page
+        ).getContentOrThrow()
+    }
+    //endregion
+
     //region PagingHelperListener
     override suspend fun pagingSearchMovies(
         searchKeyword: String,
