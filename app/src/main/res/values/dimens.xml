@@ -7,8 +7,8 @@
     <dimen name="text_size_description">16sp</dimen>
     <dimen name="text_size_button">16sp</dimen>
     <dimen name="text_size_edit_text">16sp</dimen>
-    <dimen name="text_size_list_title">15sp</dimen>
-    <dimen name="text_size_list_subtitle">13sp</dimen>
+    <dimen name="text_size_list_title">16sp</dimen>
+    <dimen name="text_size_list_subtitle">14sp</dimen>
     <dimen name="text_size_details_label">14sp</dimen>
     <dimen name="text_size_details_button">14sp</dimen>
 

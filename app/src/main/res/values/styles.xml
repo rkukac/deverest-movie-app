@@ -58,12 +58,10 @@
     <style name="TextStyle.List.Title">
         <item name="android:textSize">@dimen/text_size_list_title</item>
         <item name="android:paddingTop">@dimen/list_item_padding</item>
-        <item name="android:paddingBottom">@dimen/list_item_padding_inner</item>
     </style>
 
     <style name="TextStyle.List.Subtitle">
         <item name="android:textSize">@dimen/text_size_list_subtitle</item>
-        <item name="android:paddingTop">@dimen/list_item_padding_inner</item>
         <item name="android:paddingBottom">@dimen/list_item_padding</item>
     </style>
 

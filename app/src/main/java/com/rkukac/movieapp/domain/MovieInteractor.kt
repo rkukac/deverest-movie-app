@@ -37,10 +37,10 @@ class MovieInteractor @Inject constructor(
             page = page
         ).getContentOrThrow()
 
-        return searchResult.copy(movies = getBudgetUpdateMovieList(searchResult.movies))
+        return searchResult.copy(movies = getBudgetUpdatedMovieList(searchResult.movies))
     }
 
-    private suspend fun getBudgetUpdateMovieList(movies: List<DomainMovie>): List<DomainMovie> {
+    private suspend fun getBudgetUpdatedMovieList(movies: List<DomainMovie>): List<DomainMovie> {
         return movies.map {
             getMovieDetails(it.id).toDomainMovie(
                 imageFormatterBlock = imageFormatterBlock,
