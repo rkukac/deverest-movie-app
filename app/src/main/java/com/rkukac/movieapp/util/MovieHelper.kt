@@ -11,6 +11,10 @@ class MovieHelper @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
 
+    fun getFormattedImage(image: String?): String? {
+        return image?.let { context.getString(R.string.config_image_base_url).plus(it) }
+    }
+
     //region Search
     fun getSearchErrorStateModel(): DomainStateModel = getDefaultErrorStateModel(buttonText = "")
 

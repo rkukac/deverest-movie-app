@@ -19,6 +19,10 @@ class MovieInteractor @Inject constructor(
 
     private val apiKey = "555dd34b51d2f5b7f9fdb39e04986933"
 
+    private val imageFormatterBlock: (String?) -> String? = { image ->
+        movieHelper.getFormattedImage(image = image)
+    }
+
     //region Search
     fun getSearchErrorStateModel(): DomainStateModel = movieHelper.getSearchErrorStateModel()
 
@@ -28,7 +32,8 @@ class MovieInteractor @Inject constructor(
         return networkDataSource.searchMovies(
             apiKey = apiKey,
             searchKeyword = searchKeyword,
-            page = page
+            page = page,
+            imageFormatterBlock = imageFormatterBlock
         ).getContentOrThrow()
     }
 

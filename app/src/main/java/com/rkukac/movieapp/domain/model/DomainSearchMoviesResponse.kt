@@ -9,9 +9,11 @@ data class DomainSearchMoviesResponse(
     val totalPages: Int
 ) : DomainMovieListBase
 
-fun SearchMoviesResponse.toDomainSearchMoviesResponse() = DomainSearchMoviesResponse(
+fun SearchMoviesResponse.toDomainSearchMoviesResponse(
+    imageFormatterBlock: (String?) -> String?
+) = DomainSearchMoviesResponse(
     page = page,
-    movies = movies.map { it.toDomainMovie() },
+    movies = movies.map { it.toDomainMovie(imageFormatterBlock = imageFormatterBlock) },
     totalResults = totalResults,
     totalPages = totalPages
 )

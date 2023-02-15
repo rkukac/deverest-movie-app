@@ -9,9 +9,9 @@ data class DomainMovie(
     val rating: Double
 )
 
-fun Movie.toDomainMovie() = DomainMovie(
+fun Movie.toDomainMovie(imageFormatterBlock: (String?) -> String?) = DomainMovie(
     id = id,
     title = title,
-    image = image,
+    image = imageFormatterBlock.invoke(image),
     rating = rating
 )

@@ -2,6 +2,7 @@
 <resources>
 
     <string name="config_network_base_url" translatable="false">https://api.themoviedb.org/3/</string>
+    <string name="config_image_base_url" translatable="false">https://image.tmdb.org/t/p/w500</string>
     <integer name="config_network_timeout_ms">30000</integer>
 
     <integer name="config_page_size">10</integer>
