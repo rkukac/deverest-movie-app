@@ -3,11 +3,11 @@ package com.rkukac.movieapp.domain.model
 import com.rkukac.movieapp.data.network.model.SearchMoviesResponse
 
 data class DomainSearchMoviesResponse(
-    val page: Int,
-    val movies: List<DomainMovie>,
+    override val page: Int,
+    override val movies: List<DomainMovie>,
     val totalResults: Int,
     val totalPages: Int
-)
+) : DomainMovieListBase
 
 fun SearchMoviesResponse.toDomainSearchMoviesResponse() = DomainSearchMoviesResponse(
     page = page,

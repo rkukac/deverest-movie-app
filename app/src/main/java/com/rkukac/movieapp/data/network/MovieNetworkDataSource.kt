@@ -13,7 +13,11 @@ class MovieNetworkDataSource @Inject constructor(
     private val movieApi: MovieApi
 ) {
 
-    suspend fun searchMovies(apiKey: String, searchKeyword: String, page: Int) = executeRequest {
+    suspend fun searchMovies(
+        apiKey: String,
+        searchKeyword: String,
+        page: Int
+    ) = executeRequest {
         movieApi.searchMovies(apiKey = apiKey, searchKeyword = searchKeyword, page = page)
     }.map(SearchMoviesResponse::toDomainSearchMoviesResponse)
 

@@ -9,4 +9,138 @@
     <style name="BottomNavigationViewThemeOverlay">
         <item name="colorOnSurface">@color/white</item>
     </style>
+
+    <style name="TextStyle">
+        <item name="android:textColor">@color/movie_text_blue</item>
+    </style>
+
+    <style name="TextStyle.Default">
+        <item name="android:layout_marginStart">@dimen/space_side</item>
+        <item name="android:layout_marginEnd">@dimen/space_side</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="TextStyle.Default.Title">
+        <item name="android:textSize">@dimen/text_size_title</item>
+    </style>
+
+    <style name="TextStyle.Default.Description">
+        <item name="android:textSize">@dimen/text_size_description</item>
+    </style>
+
+    <style name="TextStyle.Search">
+        <item name="android:background">@color/movie_grey</item>
+        <item name="android:paddingStart">@dimen/space_side</item>
+        <item name="android:paddingEnd">@dimen/space_side</item>
+    </style>
+
+    <style name="TextStyle.Search.Title">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">@dimen/space_side</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="TextStyle.Search.Description">
+        <item name="android:textSize">@dimen/text_size_description</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">@dimen/space_side</item>
+    </style>
+
+    <style name="TextStyle.List">
+        <item name="android:paddingStart">@dimen/list_item_padding</item>
+        <item name="android:paddingEnd">@dimen/list_item_padding</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextStyle.List.Title">
+        <item name="android:textSize">@dimen/text_size_list_title</item>
+        <item name="android:paddingTop">@dimen/list_item_padding</item>
+    </style>
+
+    <style name="TextStyle.List.Subtitle">
+        <item name="android:textSize">@dimen/text_size_list_subtitle</item>
+        <item name="android:paddingBottom">@dimen/list_item_padding</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:layout_marginStart">@dimen/space_side</item>
+        <item name="android:layout_marginEnd">@dimen/space_side</item>
+        <item name="android:layout_marginBottom">@dimen/space_side</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:minHeight">@dimen/button_min_height</item>
+        <item name="android:textAppearance">@style/ButtonTextTextStyle</item>
+        <item name="backgroundTint">@color/button_background</item>
+        <item name="shapeAppearanceOverlay">@style/ButtonShapeAppearance</item>
+        <item name="rippleColor">?colorOnPrimary</item>
+        <item name="iconGravity">textStart</item>
+        <item name="materialThemeOverlay">@style/ButtonThemeOverlay</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="ButtonTextTextStyle">
+        <item name="android:layout_marginStart">@dimen/button_text_space_horizontal</item>
+        <item name="android:layout_marginEnd">@dimen/button_text_space_horizontal</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:textColor">@color/movie_text_button</item>
+    </style>
+
+    <style name="ButtonShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/common_radius</item>
+    </style>
+
+    <style name="ButtonThemeOverlay">
+        <item name="colorOnSurface">@color/movie_button</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:layout_marginStart">@dimen/space_side</item>
+        <item name="android:layout_marginEnd">@dimen/space_side</item>
+        <item name="android:layout_marginTop">@dimen/space_side</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:inputType">text</item>
+        <item name="android:hint">@string/search_content_edit_text_hint</item>
+        <item name="android:textColorHint">@color/movie_text_blue_hint</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/text_size_edit_text</item>
+        <item name="android:textColor">@color/movie_text_blue</item>
+        <item name="android:background">@drawable/background_edit_text</item>
+    </style>
+
+    <style name="ViewAnimatorStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:inAnimation">@anim/fade_in</item>
+        <item name="android:measureAllChildren">false</item>
+    </style>
+
+    <style name="MovieLoaderStyle">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">@dimen/list_loader_size</item>
+        <item name="android:layout_height">@dimen/list_loader_size</item>
+        <item name="android:indeterminate">true</item>
+        <item name="android:indeterminateDrawable">@drawable/layer_loader</item>
+    </style>
+
+    <style name="MovieListCardStyle">
+        <item name="android:layout_marginStart">@dimen/space_side</item>
+        <item name="android:layout_marginEnd">@dimen/space_side</item>
+        <item name="android:layout_marginTop">@dimen/list_item_margin_vertical</item>
+        <item name="android:layout_marginBottom">@dimen/list_item_margin_vertical</item>
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="cardElevation">@dimen/list_item_elevation</item>
+        <item name="cardCornerRadius">0dp</item>
+    </style>
 </resources>
