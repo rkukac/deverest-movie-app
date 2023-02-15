@@ -2,9 +2,7 @@ package com.rkukac.movieapp.domain
 
 import com.rkukac.movieapp.data.network.MovieNetworkDataSource
 import com.rkukac.movieapp.data.network.model.getContentOrThrow
-import com.rkukac.movieapp.domain.model.DomainMovieDetails
-import com.rkukac.movieapp.domain.model.DomainSearchMoviesResponse
-import com.rkukac.movieapp.domain.model.DomainStateModel
+import com.rkukac.movieapp.domain.model.*
 import com.rkukac.movieapp.util.MovieHelper
 import com.rkukac.movieapp.util.paging.PagingHelper
 import com.rkukac.movieapp.util.paging.PagingHelperListener
@@ -23,18 +21,32 @@ class MovieInteractor @Inject constructor(
         movieHelper.getFormattedImage(image = image)
     }
 
+    private val budgetFormatterBlock: (Int) -> String = { budget ->
+        movieHelper.getFormattedBudget(budget = budget)
+    }
+
     //region Search
     fun getSearchErrorStateModel(): DomainStateModel = movieHelper.getSearchErrorStateModel()
 
     fun getSearchEmptyStateModel(): DomainStateModel = movieHelper.getSearchEmptyStateModel()
 
     private suspend fun searchMovies(searchKeyword: String, page: Int): DomainSearchMoviesResponse {
-        return networkDataSource.searchMovies(
+        val searchResult = networkDataSource.searchMovies(
             apiKey = apiKey,
             searchKeyword = searchKeyword,
-            page = page,
-            imageFormatterBlock = imageFormatterBlock
+            page = page
         ).getContentOrThrow()
+
+        return searchResult.copy(movies = getBudgetUpdateMovieList(searchResult.movies))
+    }
+
+    private suspend fun getBudgetUpdateMovieList(movies: List<DomainMovie>): List<DomainMovie> {
+        return movies.map {
+            getMovieDetails(it.id).toDomainMovie(
+                imageFormatterBlock = imageFormatterBlock,
+                budgetFormatterBlock = budgetFormatterBlock
+            )
+        }
     }
 
     fun getEmptySearchKeywordMessage() = movieHelper.getEmptySearchKeywordMessage()
