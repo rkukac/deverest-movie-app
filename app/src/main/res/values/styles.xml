@@ -90,6 +90,14 @@
         <item name="android:textColor">@color/movie_blue_secondary</item>
     </style>
 
+    <style name="TextStyle.ComingSoon">
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">@dimen/space_side</item>
+        <item name="android:paddingEnd">@dimen/space_side</item>
+        <item name="android:textSize">@dimen/text_size_coming_soon</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="ButtonStyle" parent="Widget.MaterialComponents.Button.UnelevatedButton">
         <item name="android:layout_marginStart">@dimen/space_side</item>
         <item name="android:layout_marginEnd">@dimen/space_side</item>
