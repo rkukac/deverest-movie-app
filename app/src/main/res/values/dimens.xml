@@ -11,6 +11,7 @@
     <dimen name="text_size_list_subtitle">14sp</dimen>
     <dimen name="text_size_details_label">14sp</dimen>
     <dimen name="text_size_details_button">14sp</dimen>
+    <dimen name="text_size_coming_soon">28sp</dimen>
 
     <dimen name="button_min_height">48dp</dimen>
     <dimen name="button_text_space_horizontal">8dp</dimen>
