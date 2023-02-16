@@ -73,10 +73,45 @@ class MovieInteractor @Inject constructor(
     }
     //endregion
 
+    //region Popular
+    private suspend fun getPopularMovies(page: Int): DomainGetPopularMoviesResponse {
+        val response = networkDataSource.getPopularMovies(
+            apiKey = apiKey,
+            page = page
+        ).getContentOrThrow()
+
+        return response.copy(movies = response.movies.map {
+            it.copy(
+                image = imageFormatterBlock.invoke(
+                    it.image
+                )
+            )
+        })
+    }
+
+    fun providePopularPagingSource(
+        pagingSourceListener: PagingSourceListener
+    ) = pagingHelper.providePopularPagingSource(
+        pagingSourceListener = pagingSourceListener,
+        pagingHelperListener = this
+    )
+
+    fun getPopularErrorStateModel(): DomainStateModel =
+        movieHelper.getPopularErrorStateModel()
+
+    fun getPopularEmptyStateModel(): DomainStateModel =
+        movieHelper.getPopularEmptyStateModel()
+    //endregion
+
     //region PagingHelperListener
     override suspend fun pagingSearchMovies(
         searchKeyword: String,
         page: Int
     ): DomainSearchMoviesResponse = searchMovies(searchKeyword = searchKeyword, page = page)
+
+    override suspend fun pagingGetPopularMovies(
+        page: Int
+    ): DomainGetPopularMoviesResponse = getPopularMovies(page = page)
+
     //endregion
 }

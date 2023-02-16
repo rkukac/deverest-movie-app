@@ -9,7 +9,21 @@
         android:id="@+id/popular_fragment"
         android:name="com.rkukac.movieapp.ui.navbar.popular.PopularFragment"
         android:label="@string/screen_title_popular"
-        tools:layout="@layout/fragment_popular" />
+        tools:layout="@layout/fragment_popular">
+
+        <action
+            android:id="@+id/action_popular_fragment_to_details_fragment"
+            app:destination="@id/details_fragment"
+            app:enterAnim="@anim/fade_in"
+            app:popEnterAnim="@anim/fade_in">
+
+            <argument
+                android:name="id"
+                app:argType="integer" />
+
+        </action>
+
+    </fragment>
 
     <fragment
         android:id="@+id/search_fragment"

@@ -9,7 +9,8 @@ import javax.inject.Provider
 
 class PagingHelper @Inject constructor(
     private val configHelper: ConfigHelper,
-    private val searchPagingSourceProvider: Provider<SearchPagingSource>
+    private val searchPagingSourceProvider: Provider<SearchPagingSource>,
+    private val popularPagingSourceProvider: Provider<PopularPagingSource>,
 ) {
 
     companion object {
@@ -21,13 +22,28 @@ class PagingHelper @Inject constructor(
         pagingSourceListener: PagingSourceListener,
         pagingHelperListener: PagingHelperListener
     ): Pager<SearchPagingKey, UiMovie> = Pager(
-        config = configHelper.provideSearchPageConfig(),
+        config = configHelper.provideDefaultPageConfig(),
         initialKey = SearchPagingKey(
             page = INITIAL_PAGE,
             searchKeyword = searchKeyword
         )
     ) {
         searchPagingSourceProvider.get().apply {
+            this.pagingSourceListener = pagingSourceListener
+            this.pagingHelperListener = pagingHelperListener
+        }
+    }
+
+    fun providePopularPagingSource(
+        pagingSourceListener: PagingSourceListener,
+        pagingHelperListener: PagingHelperListener
+    ): Pager<PopularPagingKey, UiMovie> = Pager(
+        config = configHelper.provideDefaultPageConfig(),
+        initialKey = PopularPagingKey(
+            page = INITIAL_PAGE
+        )
+    ) {
+        popularPagingSourceProvider.get().apply {
             this.pagingSourceListener = pagingSourceListener
             this.pagingHelperListener = pagingHelperListener
         }

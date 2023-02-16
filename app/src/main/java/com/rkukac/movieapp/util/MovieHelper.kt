@@ -52,6 +52,16 @@ class MovieHelper @Inject constructor(
     fun getDetailsErrorStateModel(): DomainStateModel = getDefaultErrorStateModel()
     //endregion
 
+    //region Popular
+    fun getPopularErrorStateModel(): DomainStateModel = getDefaultErrorStateModel()
+
+    fun getPopularEmptyStateModel(): DomainStateModel = DomainStateModel(
+        title = getStringResource(R.string.popular_empty_title),
+        description = getStringResource(R.string.popular_empty_description),
+        buttonText = ""
+    )
+    //endregion
+
     private fun getDefaultErrorStateModel(
         buttonText: String = getStringResource(R.string.error_default_button_text)
     ): DomainStateModel = DomainStateModel(

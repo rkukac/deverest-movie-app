@@ -1,5 +1,6 @@
 package com.rkukac.movieapp.data.network.api
 
+import com.rkukac.movieapp.data.network.model.GetPopularMoviesResponse
 import com.rkukac.movieapp.data.network.model.MovieDetails
 import com.rkukac.movieapp.data.network.model.SearchMoviesResponse
 import retrofit2.Response
@@ -46,4 +47,22 @@ interface MovieApi {
         @Path("movie_id") movieId: Int,
         @Query("api_key") apiKey: String
     ): Response<MovieDetails>
+
+    /**
+     * Get a list of the current popular movies on TMDB. This list updates daily.
+     *
+     * Responses:
+     *  - 200: Successful operation
+     *  - 401: Invalid
+     *  - 404: Not available
+     *
+     * @param apiKey The API key.
+     * @param page The selected page number.
+     * @return [GetPopularMoviesResponse]
+     */
+    @GET("movie/popular")
+    suspend fun getPopularMovies(
+        @Query("api_key") apiKey: String,
+        @Query("page") page: Int
+    ): Response<GetPopularMoviesResponse>
 }
