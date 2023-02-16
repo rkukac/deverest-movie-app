@@ -13,6 +13,7 @@ import com.rkukac.movieapp.ui.navbar.popular.PopularFragment.ViewAnimator.CONTEN
 import com.rkukac.movieapp.ui.navbar.popular.PopularFragment.ViewAnimator.EMPTY
 import com.rkukac.movieapp.ui.navbar.popular.PopularFragment.ViewAnimator.ERROR
 import com.rkukac.movieapp.ui.navbar.popular.PopularFragment.ViewAnimator.toChildPosition
+import com.rkukac.movieapp.util.navigation.navigateSafe
 import com.rkukac.movieapp.util.paging.PopularPagingKey
 import com.rkukac.movieapp.util.ui.displayedChildIfDifferent
 import com.rkukac.movieapp.util.ui.viewBinding
@@ -92,7 +93,7 @@ class PopularFragment :
     }
     //endregion
 
-    override fun openMovieDetails(id: Int) {
-        TODO("Not yet implemented")
+    override fun openMovieDetails(id: Int) = navigateSafe {
+        navigate(PopularFragmentDirections.actionPopularFragmentToDetailsFragment(id = id))
     }
 }
