@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">MovieApp</string>
+    <string name="app_name">TMDB</string>
+
+    <string name="screen_title_popular">Popular</string>
+    <string name="screen_title_search">Search</string>
+    <string name="screen_title_favourites">Favourites</string>
+
+    <string name="error_default_title">Something went wrong!</string>
+    <string name="error_default_description">Please try again later.</string>
+    <string name="error_default_button_text">Try again</string>
+
+    <string name="search_content_title">Search movies</string>
+    <string name="search_content_description">Search movies by title, author,… or keywords.</string>
+    <string name="search_content_edit_text_hint">Title, author or keywords…</string>
+    <string name="search_content_button_text">Search</string>
+    <string name="search_empty_title">No results found for your keyword!</string>
+    <string name="search_empty_description">Please try searching with another keyword.</string>
+    <string name="search_empty_keyword_message">Enter a keyword to search.</string>
+
+    <string name="details_label_release_date">Release date</string>
+    <string name="details_label_rating">Rating</string>
+    <string name="details_label_popularity">Popularity</string>
+    <string name="details_label_budget">Budget</string>
+    <string name="details_label_revenue">Revenue</string>
+    <string name="details_label_overview">Overview</string>
+
+    <string name="popular_content_title">Popular movies</string>
+    <string name="popular_content_description">Current popular movies on TMDB. This list updates daily.</string>
+    <string name="popular_empty_title">There are no popular movie right now!</string>
+    <string name="popular_empty_description">Check back later, popular movies are coming soon.</string>
+
+    <string name="favourites_content_title">Favourite movies</string>
+    <string name="favourites_content_description">Here you can find your saved movies.</string>
+    <string name="favourites_coming_soon">Coming soon…</string>
 </resources>

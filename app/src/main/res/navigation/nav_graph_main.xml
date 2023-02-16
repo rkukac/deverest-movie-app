@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation android:id="@+id/nav_graph_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/popular_fragment">
+
+    <fragment
+        android:id="@+id/popular_fragment"
+        android:name="com.rkukac.movieapp.ui.navbar.popular.PopularFragment"
+        android:label="@string/screen_title_popular"
+        tools:layout="@layout/fragment_popular">
+
+        <action
+            android:id="@+id/action_popular_fragment_to_details_fragment"
+            app:destination="@id/details_fragment"
+            app:enterAnim="@anim/fade_in"
+            app:popEnterAnim="@anim/fade_in">
+
+            <argument
+                android:name="id"
+                app:argType="integer" />
+
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.rkukac.movieapp.ui.navbar.search.SearchFragment"
+        android:label="@string/screen_title_search"
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_search_fragment_to_details_fragment"
+            app:destination="@id/details_fragment"
+            app:enterAnim="@anim/fade_in"
+            app:popEnterAnim="@anim/fade_in">
+
+            <argument
+                android:name="id"
+                app:argType="integer" />
+
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/favourites_fragment"
+        android:name="com.rkukac.movieapp.ui.navbar.favourites.FavouritesFragment"
+        android:label="@string/screen_title_favourites"
+        tools:layout="@layout/fragment_favourites" />
+
+    <fragment
+        android:id="@+id/details_fragment"
+        android:name="com.rkukac.movieapp.ui.details.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details">
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+
+    </fragment>
+
+</navigation>
