@@ -140,7 +140,7 @@
     <style name="EditTextStyle">
         <item name="android:layout_marginStart">@dimen/space_side</item>
         <item name="android:layout_marginEnd">@dimen/space_side</item>
-        <item name="android:layout_marginTop">@dimen/space_side</item>
+        <item name="android:layout_marginTop">@dimen/space_side_vertical</item>
         <item name="android:imeOptions">actionDone</item>
         <item name="android:inputType">text</item>
         <item name="android:hint">@string/search_content_edit_text_hint</item>
