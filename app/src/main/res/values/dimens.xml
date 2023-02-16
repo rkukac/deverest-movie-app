@@ -19,7 +19,7 @@
     <dimen name="space_side">24dp</dimen>
     <dimen name="space_side_vertical">12dp</dimen>
     <dimen name="space_screen_title_vertical">16dp</dimen>
-    <dimen name="space_header_vertical">12dp</dimen>
+    <dimen name="space_header_vertical">16dp</dimen>
 
     <dimen name="list_item_margin_vertical">8dp</dimen>
     <dimen name="list_item_padding">12dp</dimen>

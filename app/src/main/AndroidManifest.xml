@@ -19,6 +19,7 @@
             android:name=".ui.main.MainActivity"
             android:exported="true"
             android:screenOrientation="userPortrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

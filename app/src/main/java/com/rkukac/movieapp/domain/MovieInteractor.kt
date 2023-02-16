@@ -16,7 +16,7 @@ class MovieInteractor @Inject constructor(
     private val pagingHelper: PagingHelper,
 ) : PagingHelperListener {
 
-    private val apiKey = "555dd34b51d2f5b7f9fdb39e04986933"
+    private val apiKey = movieHelper.apiKey
 
     private val imageFormatterBlock: (String?) -> String? = { image ->
         movieHelper.getFormattedImage(image = image)

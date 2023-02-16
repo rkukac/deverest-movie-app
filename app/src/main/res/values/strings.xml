@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MovieApp</string>
+    <string name="app_name">TMDB</string>
 
     <string name="screen_title_popular">Popular</string>
     <string name="screen_title_search">Search</string>
@@ -30,6 +30,6 @@
     <string name="popular_empty_description">Check back later, popular movies are coming soon.</string>
 
     <string name="favourites_content_title">Favourite movies</string>
-    <string name="favourites_content_description">Here you can find your saved books.</string>
+    <string name="favourites_content_description">Here you can find your saved movies.</string>
     <string name="favourites_coming_soon">Coming soon…</string>
 </resources>
