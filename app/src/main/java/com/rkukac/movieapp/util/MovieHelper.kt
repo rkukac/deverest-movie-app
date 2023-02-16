@@ -18,6 +18,8 @@ class MovieHelper @Inject constructor(
 
     private val amountPrefix = context.getString(R.string.config_amount_prefix)
 
+    val apiKey = getStringResource(R.string.config_api_key)
+
     fun getFormattedImage(image: String?): String? {
         return image?.let { context.getString(R.string.config_image_base_url).plus(it) }
     }
