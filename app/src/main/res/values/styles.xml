@@ -176,4 +176,11 @@
         <item name="cardElevation">@dimen/list_item_elevation</item>
         <item name="cardCornerRadius">0dp</item>
     </style>
+
+    <style name="HeaderStyle">
+        <item name="android:background">@color/movie_blue</item>
+        <item name="android:paddingTop">@dimen/space_header_vertical</item>
+        <item name="android:paddingBottom">@dimen/space_header_vertical</item>
+        <item name="srcCompat">@drawable/ic_header</item>
+    </style>
 </resources>
