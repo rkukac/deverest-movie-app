@@ -75,10 +75,18 @@ class MovieInteractor @Inject constructor(
 
     //region Popular
     private suspend fun getPopularMovies(page: Int): DomainGetPopularMoviesResponse {
-        return networkDataSource.getPopularMovies(
+        val response = networkDataSource.getPopularMovies(
             apiKey = apiKey,
             page = page
         ).getContentOrThrow()
+
+        return response.copy(movies = response.movies.map {
+            it.copy(
+                image = imageFormatterBlock.invoke(
+                    it.image
+                )
+            )
+        })
     }
 
     fun providePopularPagingSource(
@@ -87,6 +95,12 @@ class MovieInteractor @Inject constructor(
         pagingSourceListener = pagingSourceListener,
         pagingHelperListener = this
     )
+
+    fun getPopularErrorStateModel(): DomainStateModel =
+        movieHelper.getPopularErrorStateModel()
+
+    fun getPopularEmptyStateModel(): DomainStateModel =
+        movieHelper.getPopularEmptyStateModel()
     //endregion
 
     //region PagingHelperListener

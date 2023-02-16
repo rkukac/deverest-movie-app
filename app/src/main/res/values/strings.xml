@@ -23,4 +23,9 @@
     <string name="details_label_budget">Budget</string>
     <string name="details_label_revenue">Revenue</string>
     <string name="details_label_overview">Overview</string>
+
+    <string name="popular_content_title">Popular movies</string>
+    <string name="popular_content_description">Current popular movies on TMDB. This list updates daily.</string>
+    <string name="popular_empty_title">There are no popular movie right now!</string>
+    <string name="popular_empty_description">Check back later, popular movies are coming soon.</string>
 </resources>
